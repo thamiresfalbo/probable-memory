@@ -18,7 +18,7 @@ require "rails/test_unit/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module SweetPotato
+module ProbableMemory
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
@@ -30,7 +30,7 @@ module SweetPotato
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-
+    config.assets.paths << Rails.root.join("node_modules")
     # Don't generate system test files.
     config.generators.system_tests = nil
   end
