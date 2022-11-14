@@ -182,6 +182,9 @@ GEM
     thor (1.2.1)
     tilt (2.0.11)
     timeout (0.3.0)
+    tty-cursor (0.7.1)
+    tty-spinner (0.9.3)
+      tty-cursor (~> 0.7)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     validates_email_format_of (1.7.2)
@@ -204,6 +207,7 @@ DEPENDENCIES
   spring
   sprockets-rails
   sqlite3 (~> 1.4)
+  tty-spinner (~> 0.9.3)
   tzinfo-data
   validates_email_format_of
 

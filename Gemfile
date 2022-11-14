@@ -19,3 +19,5 @@ end
 group :development do
   gem 'spring'
 end
+
+gem "tty-spinner", "~> 0.9.3"
