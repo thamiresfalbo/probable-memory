@@ -66,14 +66,33 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     bcrypt (3.1.18)
     builder (3.2.4)
+    capybara (3.38.0)
+      addressable
+      matrix
+      mini_mime (>= 0.1.3)
+      nokogiri (~> 1.8)
+      rack (>= 1.6.0)
+      rack-test (>= 0.6.3)
+      regexp_parser (>= 1.5, < 3.0)
+      xpath (~> 3.2)
+    childprocess (4.1.0)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     debug (1.6.3)
       irb (>= 1.3.6)
       reline (>= 0.3.1)
     erubi (1.11.0)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
+    faker (3.0.0)
+      i18n (>= 1.8.11, < 2)
     faraday (2.6.0)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
@@ -94,12 +113,16 @@ GEM
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (1.0.2)
+    matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.16.3)
     minitest-rails (7.0.0)
       minitest (~> 5.10)
       railties (~> 7.0.0)
+    minitest-rails-capybara (0.0.2)
+      capybara
+      minitest-rails
     multi_xml (0.6.0)
     net-imap (0.3.1)
       net-protocol
@@ -122,6 +145,7 @@ GEM
       rack (>= 1.2, < 4)
       snaky_hash (~> 2.0)
       version_gem (~> 1.1)
+    public_suffix (5.0.0)
     puma (5.6.5)
       nio4r (~> 2.0)
     racc (1.6.0)
@@ -155,9 +179,12 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    regexp_parser (2.6.0)
     reline (0.3.1)
       io-console (~> 0.5)
+    rexml (3.2.5)
     ruby2_keywords (0.0.5)
+    rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -166,6 +193,11 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    selenium-webdriver (4.6.1)
+      childprocess (>= 0.5, < 5.0)
+      rexml (~> 3.2, >= 3.2.5)
+      rubyzip (>= 1.2.2, < 3.0)
+      websocket (~> 1.0)
     snaky_hash (2.0.1)
       hashie
       version_gem (~> 1.1, >= 1.1.1)
@@ -193,17 +225,29 @@ GEM
     validates_email_format_of (1.7.2)
       i18n
     version_gem (1.1.1)
+    webdrivers (5.2.0)
+      nokogiri (~> 1.6)
+      rubyzip (>= 1.3.0)
+      selenium-webdriver (~> 4.0)
+    websocket (1.2.9)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    xpath (3.2.0)
+      nokogiri (~> 1.8)
     zeitwerk (2.6.6)
 
 PLATFORMS
   arm64-darwin-21
 
 DEPENDENCIES
+  capybara
   debug
+  factory_bot
+  factory_bot_rails
+  faker
   minitest-rails (~> 7.0.0)
+  minitest-rails-capybara
   puma (~> 5.0)
   rails (~> 7.0.4)
   sassc-rails (~> 2.1)
@@ -214,6 +258,7 @@ DEPENDENCIES
   tty-spinner (~> 0.9.3)
   tzinfo-data
   validates_email_format_of
+  webdrivers
 
 RUBY VERSION
    ruby 3.1.2p20
