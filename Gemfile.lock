@@ -205,7 +205,6 @@ DEPENDENCIES
   sassc-rails (~> 2.1)
   sorcery
   spring
-  sprockets-rails
   sqlite3 (~> 1.4)
   tty-spinner (~> 0.9.3)
   tzinfo-data
