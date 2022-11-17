@@ -93,7 +93,7 @@ GEM
       railties (>= 5.0.0)
     faker (3.0.0)
       i18n (>= 1.8.11, < 2)
-    faraday (2.6.0)
+    faraday (2.7.0)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
@@ -120,9 +120,6 @@ GEM
     minitest-rails (7.0.0)
       minitest (~> 5.10)
       railties (~> 7.0.0)
-    minitest-rails-capybara (0.0.2)
-      capybara
-      minitest-rails
     multi_xml (0.6.0)
     net-imap (0.3.1)
       net-protocol
@@ -247,7 +244,6 @@ DEPENDENCIES
   factory_bot_rails
   faker
   minitest-rails (~> 7.0.0)
-  minitest-rails-capybara
   puma (~> 5.0)
   rails (~> 7.0.4)
   sassc-rails (~> 2.1)

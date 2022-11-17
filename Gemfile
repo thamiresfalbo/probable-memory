@@ -14,9 +14,7 @@ gem 'validates_email_format_of'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-  # gem 'minitest-colorize'
-  gem 'minitest-rails', '~> 7.0.0'
-  gem 'minitest-rails-capybara'
+  gem "minitest-rails", "~> 7.0.0"
   gem 'tty-spinner', '~> 0.9.3'
 end
 
