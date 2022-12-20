@@ -1,12 +1,9 @@
 require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
-  test "should not save without email" do
-    email = Faker::Internet.email
-    password = Faker::Internet.password
+  def should_not_save_without_email
     user = User.new
-    user.password = password
-    user.email = email
-    assert_true user.save "Should save with email"
+    user.email = Faker::Internet.email
+    assert_not user.save, "Should not save without password."
   end
 end
