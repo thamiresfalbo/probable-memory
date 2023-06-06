@@ -18,6 +18,7 @@
       <div class="navbar-end">
         <div class="buttons">
           <% if current_user %>
+            <%= link_to 'Dashboard', :dashboard, class: "button is-primary" %>
             <%= link_to 'Edit Profile', edit_user_path(current_user.id), class: "button is-primary" %>
             <%= link_to 'Logout', :logout, method: :post, class: "button is-primary" %>
           <% else %>
