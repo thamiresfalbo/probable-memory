@@ -23,7 +23,8 @@ module ProbableMemory
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
     config.generators do |g|
-      g.test_framework :minitest, spec: true, fixture: false
+      g.test_framework :rspec
+      g.integration_tool :rspec
     end
     # Configuration for the application, engines, and railties goes here.
     #
