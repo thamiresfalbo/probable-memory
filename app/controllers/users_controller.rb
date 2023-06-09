@@ -13,21 +13,26 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def edit; end
+  def edit
+    @user = User.find(current_user.id)
+  end
 
+  # TODO: Fix user registration
   def create
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to @user, notice: 'User was successfully created.'
+      redirect_to root_path, notice: 'User was successfully created.'
     else
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity, notice: 'An error was occurred.'
     end
   end
 
   def update
+    @user = User.find(current_user.id)
+
     if @user.update(user_params)
-      redirect_to @user, notice: 'User was successfully updated.'
+      redirect_to :dashboard, notice: 'User was successfully updated.'
     else
       render :edit, status: :unprocessable_entity
     end

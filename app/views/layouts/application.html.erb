@@ -28,7 +28,7 @@
                 <a class="navbar-item">
                 </a>
                 <%= link_to 'Dashboard', :dashboard, class: "navbar-item" %>
-                <%= link_to 'Edit Profile', edit_user_path(current_user.id), class: "navbar-item" %>
+                <%= link_to 'Edit Profile', profile_edit_path, class: "navbar-item" %>
                 <hr class="navbar-divider">
                 <%= link_to 'Logout', :logout, method: :post, class: "navbar-item" %>
               </div>
@@ -36,7 +36,7 @@
           </div>
         <% else %>
           <div class="buttons navbar-item">
-            <%= link_to 'Register', new_user_path, class: "button is-light"  %>
+            <%= link_to 'Register', :register, class: "button is-light"  %>
             <%= link_to 'Login', :login, class: "button is-primary" %>
           </div>
         <% end %>
