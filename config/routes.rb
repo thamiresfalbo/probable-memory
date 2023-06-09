@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'home#index'
-  
+
   resources :users
   resources :user_sessions, only: %i[new create destroy]
   get 'login', to: 'user_sessions#new', as: :login
