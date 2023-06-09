@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :users
   get 'register', to: 'users#new', as: :register
   post 'register', to: 'users#create'
-
   get 'profile/edit', to: 'users#edit'
 
   resources :user_sessions, only: %i[new create destroy]

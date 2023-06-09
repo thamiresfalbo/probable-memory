@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.0'
 
 gem 'acts-as-taggable-on', '~> 9.0'
+gem 'cancancan'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.4'
 gem 'sassc-rails', '~> 2.1'

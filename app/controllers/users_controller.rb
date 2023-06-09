@@ -13,11 +13,8 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def edit
-    @user = User.find(current_user.id)
-  end
+  def edit; end
 
-  # TODO: Fix user registration
   def create
     @user = User.new(user_params)
 
@@ -29,8 +26,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(current_user.id)
-
+    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to :dashboard, notice: 'User was successfully updated.'
     else
@@ -39,6 +35,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @user = User.find(params[:id])
     @user.destroy
     redirect_to users_url, notice: 'User was successfully destroyed.'
   end

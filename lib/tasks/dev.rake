@@ -15,7 +15,7 @@ namespace :dev do
     end
   end
 
-  desc 'Add default user'
+  desc 'Add default users'
   task add_default_user: :environment do
     User.create!(
       email: 'user@123.com',
@@ -38,7 +38,8 @@ namespace :dev do
 
     File.open(file_path, 'r').each do |line|
       ActsAsTaggableOn::Tag.new(
-        name: line.strip).save
+        name: line.strip
+      ).save
     end
   end
 
