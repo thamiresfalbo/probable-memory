@@ -1,5 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'Admin' do
+    it 'can suspend users' do
+    end
+
+    it 'cannot suspend admins' do
+    end
+
+    it 'can change roles from another user' do
+    end
+  end
 end

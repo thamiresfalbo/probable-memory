@@ -1,7 +1,7 @@
-namespace :dev do
-  DEFAULT_PASSWORD = '123456'
-  DEFAULT_FILES_PATH = File.join(Rails.root, 'lib', 'tmp')
+DEFAULT_PASSWORD = '123456'
+DEFAULT_FILES_PATH = File.join(Rails.root, 'lib', 'tmp')
 
+namespace :dev do
   desc 'Initializes the environment.'
   task setup: :environment do
     if Rails.env.development?
@@ -19,7 +19,8 @@ namespace :dev do
   task add_default_user: :environment do
     User.create!(
       email: 'user@123.com',
-      password: DEFAULT_PASSWORD
+      password: DEFAULT_PASSWORD,
+      role: 'member'
     )
   end
 
@@ -27,8 +28,16 @@ namespace :dev do
   task add_admin: :environment do
     Admin.create!(
       email: 'admin@123.com',
-      password: DEFAULT_PASSWORD
+      password: DEFAULT_PASSWORD,
+      role: 'admin'
     )
+  end
+
+  describe 'Add sample works' do
+    task add_works :environment do 
+      Work.create!(
+        
+      )
   end
 
   desc 'Add tagging'

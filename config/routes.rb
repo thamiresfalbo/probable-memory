@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  resources :users
+  resources :users, except: %i[destroy]
   get 'register', to: 'users#new', as: :register
   post 'register', to: 'users#create'
   get 'profile/edit', to: 'users#edit'
