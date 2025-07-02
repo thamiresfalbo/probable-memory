@@ -1,9 +1,10 @@
 class User < ApplicationRecord
-  ROLES = %i[admin moderator member banned]
-  authenticates_with_sorcery!
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+  ROLES = %i[admin moderator member banned].freeze
   has_many :works
 
-  validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
+  validates :password, length: { minimum: 12 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
   validates :password, presence: true, if: -> { new_record? || changes[:crypted_password] }
 

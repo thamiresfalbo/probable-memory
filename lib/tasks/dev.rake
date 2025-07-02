@@ -33,12 +33,13 @@ namespace :dev do
     )
   end
 
-  describe 'Add sample works' do
-    task add_works :environment do 
-      Work.create!(
-        
-      )
-  end
+  # describe 'Add sample works' do
+  #   task add_works :environment do
+  #   end
+  #   # Work.create!(
+
+  #   # )
+  # end
 
   desc 'Add tagging'
   task add_tags: :environment do
