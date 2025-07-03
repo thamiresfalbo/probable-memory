@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include Authentication
   before_action :require_login
 
   private

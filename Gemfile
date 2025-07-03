@@ -1,14 +1,17 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.0'
+ruby '3.4.4'
 
-gem 'acts-as-taggable-on', '~> 9.0'
+gem 'acts-as-taggable-on'
+gem 'bcrypt', '~> 3.1'
 gem 'cancancan'
-gem 'puma', '~> 5.0'
-gem 'rails', '~> 7.0.4'
-gem 'sassc-rails', '~> 2.1'
-gem 'sorcery'
+gem 'puma'
+gem 'rails'
+gem 'rspec', '~> 3.13'
+gem 'sassc-rails'
 gem 'sprockets-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'validates_email_format_of'

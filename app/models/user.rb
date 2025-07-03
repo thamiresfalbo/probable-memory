@@ -1,11 +1,6 @@
 class User < ApplicationRecord
-  ROLES = %i[admin moderator member banned]
-  authenticates_with_sorcery!
-  has_many :works
+  has_secure_password
+  has_many :sessions, dependent: :destroy
 
-  validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
-  validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
-  validates :password, presence: true, if: -> { new_record? || changes[:crypted_password] }
-
-  validates :email, uniqueness: true, email_format: { message: 'has invalid format.' }, presence: true
+  normalizes :email_address, with: ->(e) { e.strip.downcase }
 end
