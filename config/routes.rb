@@ -1,21 +1,22 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  resource :session
-  resources :passwords, param: :token
   root 'home#index'
+  get 'dashboard', to: 'dashboard#show', as: :dashboard
+
+  resource :session, only: %i[new create destroy]
+  get 'login', to: 'sessions#new', as: :login
+  post 'login', to: 'sessions#create'
+  post 'logout', to: 'sessions#destroy', as: :logout
+
+  resources :passwords, only: %i[new create edit update], param: :token
 
   resources :users, except: %i[destroy]
   get 'register', to: 'users#new', as: :register
   post 'register', to: 'users#create'
   get 'profile/edit', to: 'users#edit'
 
-  resources :user_sessions, only: %i[new create destroy]
-  get 'login', to: 'user_sessions#new', as: :login
-  post 'login', to: 'user_sessions#create'
-  post 'logout', to: 'user_sessions#destroy', as: :logout
-
   resources :works
   resources :chapters
   resources :tags, only: %i[index show]
-
-  get 'dashboard', to: 'dashboard#show', as: :dashboard
 end

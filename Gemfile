@@ -38,3 +38,5 @@ group :production do
   gem 'pg'
   gem 'pghero'
 end
+
+gem "kamal", "~> 2.7"

@@ -21,7 +21,7 @@
       <div class="navbar-menu">
         <div class="navbar-end">
           <%# TODO DROPDOWN MENU %>
-          <% if current_user %>
+          <% if authenticated? %>
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link">User</a>
               <div class="navbar-dropdown is-right">
@@ -30,7 +30,7 @@
                 <%= link_to 'Dashboard', :dashboard, class: "navbar-item" %>
                 <%= link_to 'Edit Profile', profile_edit_path, class: "navbar-item" %>
                 <hr class="navbar-divider">
-                <%= link_to 'Logout', :logout, method: :post, class: "navbar-item" %>
+                <%= link_to 'Log out', :logout, class: "navbar-item" %>
               </div>
             </div>
           </div>
